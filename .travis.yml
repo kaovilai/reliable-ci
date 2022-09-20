@@ -1,0 +1,18 @@
+os: linux
+services: docker
+dist: focal
+language: go
+go: stable
+
+script:
+- echo hello
+
+jobs:
+  include:
+  - stage: arch test
+    arch: ppc64le
+  - arch: s390x
+  - arch: arm64-graviton2
+    virt: vm
+    group: edge
+  - arch: amd64
