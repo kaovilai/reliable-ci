@@ -43,8 +43,8 @@ jobs:
             "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/devel_kubic_libcontainers_unstable.gpg]\
               https://download.opensuse.org/repositories/devel:kubic:libcontainers:unstable/xUbuntu_$(lsb_release -rs)/ /" \
             | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:unstable.list > /dev/null
-      - run: sudo apt-get update -qq
-      - run: sudo apt-get -qq -y install podman
+      - run: sudo apt-get update
+      - run: sudo apt-get -y install podman
 #       - restore_cache:
 #           key: cache-{{ checksum ".circleci/config.yml" }}
 #       - run: go env
