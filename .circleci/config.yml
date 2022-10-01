@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - run: docker version
-      - run: sudo apt -y install podman
+      - run: sudo apt update && sudo apt -y install podman
 #       - restore_cache:
 #           key: cache-{{ checksum ".circleci/config.yml" }}
 #       - run: go env
