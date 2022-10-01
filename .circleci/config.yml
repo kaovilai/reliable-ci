@@ -52,10 +52,8 @@ jobs:
 #             - ~/go/pkg/mod
 #             - ~/.cache/go-build
       - run: curl -Lo microshift https://github.com/openshift/microshift/releases/download/4.8.0-0.microshift-2022-02-02-194009/microshift-linux-amd64
-      - run: chmod +x ./microshift && ./microshift run
+      - run: chmod +x ./microshift && sudo ./microshift run
       - run: sudo snap install kubectl --classic
-      - run: kind version
-      - run: kind create cluster
       - run: kubectl config use-context kind-kind
       # Install operator-lifecycle-manager
       - run: curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.22.0/install.sh | bash -s v0.22.0
