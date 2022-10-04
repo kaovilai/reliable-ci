@@ -20,8 +20,8 @@ jobs:
       - run: curl -Lo crc https://dl.fedoraproject.org/pub/alt/okd-crc/release/linux-amd64/crc
       - run: chmod +x ./crc
       - run: ./crc config set consent-telemetry no
-      - run: crc setup
-      - run: crc start
+      - run: ./crc setup
+      - run: ./crc start
       
 
 # Invoke jobs via workflows
